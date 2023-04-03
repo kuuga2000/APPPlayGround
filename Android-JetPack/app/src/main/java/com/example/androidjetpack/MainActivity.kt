@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
@@ -17,14 +18,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Column(
-                modifier = Modifier.width(20.dp).height(500.dp)
+                modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(top = 50.dp, bottom = 50.dp)
                     .background(Color.Yellow),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Text("Hello")
-                Text("World")
+                Text("Hello", Modifier.TextStyle())
+                Text("World", Modifier.TextStyle(), Color(0xFFFFFF))
             }
         }
     }
+}
+
+fun Modifier.TextStyle():Modifier = composed {
+    offset(50.dp, 20.dp)
+    background(Color.Red)
 }

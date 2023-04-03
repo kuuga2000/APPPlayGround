@@ -1,1 +1,3 @@
 https://www.jetpackcompose.app/What-is-the-current-status-of-Jetpack-Compose
+https://www.answertopia.com/jetpack-compose/how-to-use-modifiers-in-jetpack-compose/
+https://www.tutorialkart.com/android-jetpack-compose/text-create/
