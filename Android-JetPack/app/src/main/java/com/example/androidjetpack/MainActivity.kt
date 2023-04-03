@@ -22,8 +22,12 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .fillMaxHeight()
-                    .padding(top = 50.dp, bottom = 50.dp)
-                    .border(5.dp, Color.Magenta)
+                    .border(2.dp, Color.Magenta)
+                    .padding(2.dp)
+                    .border(4.dp, Color.Blue)
+                    .padding(4.dp)
+                    .border(5.dp, Color.Red)
+                    .padding(5.dp)
                     .background(Color.Yellow),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
