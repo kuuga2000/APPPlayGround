@@ -10,6 +10,8 @@ import androidx.compose.material.Text;
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.kuuga.androidcompose.ui.theme.AndroidComposeTheme
 
@@ -24,7 +26,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Text("Hello World",
                         color = Color(0xFFF0000FF),
-                        fontSize = 16.sp
+                        fontSize = 16.sp,
+                        fontStyle = FontStyle.Italic,
+                        fontWeight = FontWeight.Bold
                     )
                     Text("Hello World",
                         color = Color(0xFFF0000FF),
