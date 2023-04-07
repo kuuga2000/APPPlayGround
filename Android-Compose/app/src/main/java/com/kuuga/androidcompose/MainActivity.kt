@@ -5,8 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Divider
 import androidx.compose.material.Text;
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,56 +29,17 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .background(Color.Red)
                 ) {
-
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Thin
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.ExtraLight
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Light
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Normal
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Medium
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.W900
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.ExtraBold
-                    )
-                    Text(
-                        "Hello World",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Black
-                    )
-
+                    WelcomeText(text = "Dinosaurus")
                 }
-
             }
         }
+    }
+}
+
+@Composable
+fun WelcomeText(text: String)
+{
+    SelectionContainer() {
+        Text("Hello $text", fontStyle = FontStyle.Italic)
     }
 }
