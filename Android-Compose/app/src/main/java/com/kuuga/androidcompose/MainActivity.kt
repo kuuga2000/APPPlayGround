@@ -1,6 +1,7 @@
 package com.kuuga.androidcompose
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -11,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -59,7 +61,8 @@ fun CreateTextField()
 @Composable
 fun CreateButton()
 {
-    Button(onClick = { /*TODO*/ }) {
+    val context  = LocalContext.current
+    Button(onClick = { Toast.makeText(context, "Welcome", Toast.LENGTH_LONG).show() }) {
         Text ("Submit Proposal");
     }
 }
