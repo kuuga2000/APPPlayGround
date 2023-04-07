@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Divider
+import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text;
 import androidx.compose.material.TextField
 import androidx.compose.runtime.*
@@ -49,10 +50,9 @@ fun WelcomeText(text: String)
 fun CreateTextField()
 {
     var text by remember { mutableStateOf("") }
-    TextField(
+    OutlinedTextField(
         value = text,
         onValueChange = {text = it},
         label = { Text("Type Your name")}
     )
-
 }
