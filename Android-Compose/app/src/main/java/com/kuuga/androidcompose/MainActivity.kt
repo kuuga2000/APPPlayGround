@@ -8,7 +8,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Divider
 import androidx.compose.material.Text;
-import androidx.compose.runtime.Composable
+import androidx.compose.material.TextField
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,9 +28,9 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color.Red)
                 ) {
                     WelcomeText(text = "Dinosaurus")
+                    CreateTextField()
                 }
             }
         }
@@ -42,4 +43,16 @@ fun WelcomeText(text: String)
     SelectionContainer() {
         Text("Hello $text", fontStyle = FontStyle.Italic)
     }
+}
+
+@Composable
+fun CreateTextField()
+{
+    var text by remember { mutableStateOf("") }
+    TextField(
+        value = text,
+        onValueChange = {text = it},
+        label = { Text("Type Your name")}
+    )
+
 }
