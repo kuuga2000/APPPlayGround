@@ -49,10 +49,11 @@ fun WelcomeText(text: String)
 @Composable
 fun CreateTextField()
 {
-    var text by remember { mutableStateOf("") }
+    var customerName by remember { mutableStateOf("") }
     OutlinedTextField(
-        value = text,
-        onValueChange = {text = it},
+        value = customerName,
+        onValueChange = {customerName = it},
         label = { Text("Type Your name")}
     )
+    Text(customerName);
 }
