@@ -27,14 +27,51 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .background(Color.Red)
                 ) {
+
                     Text(
-                        "Hello World! This is a sample text with 150dp",
-                        modifier = Modifier.width(150.dp).background(Color.Yellow)
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Thin
                     )
-                    Spacer(modifier = Modifier.height(20.dp))
                     Text(
-                        "Hello World! This is a sample text with 250dp",
-                        modifier = Modifier.width(250.dp).background(Color.LightGray)
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.ExtraLight
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Light
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Normal
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Medium
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.W900
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.ExtraBold
+                    )
+                    Text(
+                        "Hello World",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Black
                     )
 
                 }
