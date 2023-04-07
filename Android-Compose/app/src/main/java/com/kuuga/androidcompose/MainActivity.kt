@@ -6,10 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material.Divider
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text;
-import androidx.compose.material.TextField
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,6 +29,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     WelcomeText(text = "Dinosaurus")
                     CreateTextField()
+                    CreateButton()
                 }
             }
         }
@@ -55,5 +53,13 @@ fun CreateTextField()
         onValueChange = {customerName = it},
         label = { Text("Type Your name")}
     )
-    Text(customerName);
+    Text(customerName)
+}
+
+@Composable
+fun CreateButton()
+{
+    Button(onClick = { /*TODO*/ }) {
+        Text ("Submit Proposal");
+    }
 }
