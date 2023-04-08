@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
@@ -80,7 +81,7 @@ fun DisplayImage()
     Image(
         painter = painterResource(id = R.drawable.blacksun),
         contentDescription = "Kamen Rider Black Sun Reboot",
-        modifier = Modifier.padding(top = 50.dp).clip(CutCornerShape(50.dp))
+        modifier = Modifier.padding(top = 50.dp).clip(CircleShape)
     )
 }
 
