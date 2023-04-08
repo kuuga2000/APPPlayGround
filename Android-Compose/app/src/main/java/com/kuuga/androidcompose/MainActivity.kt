@@ -48,50 +48,58 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun WelcomeText(text: String)
-{
+fun WelcomeText(text: String) {
     SelectionContainer() {
         Text("Hello $text", fontStyle = FontStyle.Italic)
     }
 }
 
 @Composable
-fun CreateTextField()
-{
+fun CreateTextField() {
     var customerName by remember { mutableStateOf("") }
     OutlinedTextField(
         value = customerName,
-        onValueChange = {customerName = it},
-        label = { Text("Type Your name")}
+        onValueChange = { customerName = it },
+        label = { Text("Type Your name") }
     )
     Text(customerName)
 }
 
 @Composable
-fun CreateButton()
-{
-    val context  = LocalContext.current
+fun CreateButton() {
+    val context = LocalContext.current
     Button(onClick = { Toast.makeText(context, "Welcome", Toast.LENGTH_LONG).show() }) {
-        Text ("Submit Proposal");
+        Text("Submit Proposal");
     }
 }
 
 @Composable
-fun DisplayImage()
-{
+fun DisplayImage() {
     Image(
         painter = painterResource(id = R.drawable.blacksun),
         contentDescription = "Kamen Rider Black Sun Reboot",
-        modifier = Modifier.alpha(0.7f).fillMaxWidth()
+        modifier = Modifier
+            .alpha(0.7f)
+            .fillMaxWidth()
     )
 }
 
 @Composable
-fun CosCard()
-{
-    Card(elevation = 10.dp, modifier = Modifier.padding(all = 10.dp), backgroundColor = Color.Green, contentColor = Color.Red) {
+fun CosCard() {
+    Card(
+        elevation = 10.dp,
+        modifier = Modifier.padding(all = 10.dp),
+        backgroundColor = Color.Green,
+        contentColor = Color.Red,
+        shape = RoundedCornerShape(20.dp)
+    ) {
         DisplayImage()
-        Column(modifier = Modifier.padding(all = 10.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(
+            modifier = Modifier
+                .padding(all = 10.dp)
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Text("Welcome")
             Text("to")
             Text("The Club")
@@ -100,8 +108,7 @@ fun CosCard()
 }
 
 @Composable
-fun Row()
-{
+fun Row() {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier
@@ -115,5 +122,5 @@ fun Row()
 }
 
 @Composable
-fun Modifier.BgRed():Modifier = background(Color.Red)
-fun Modifier.BgBlue():Modifier = background(Color.Blue)
+fun Modifier.BgRed(): Modifier = background(Color.Red)
+fun Modifier.BgBlue(): Modifier = background(Color.Blue)
