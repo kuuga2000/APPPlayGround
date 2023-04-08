@@ -15,6 +15,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -81,7 +82,7 @@ fun DisplayImage()
     Image(
         painter = painterResource(id = R.drawable.blacksun),
         contentDescription = "Kamen Rider Black Sun Reboot",
-        modifier = Modifier.padding(top = 50.dp).clip(CircleShape)
+        modifier = Modifier.padding(top = 50.dp).alpha(0.7f)
     )
 }
 
