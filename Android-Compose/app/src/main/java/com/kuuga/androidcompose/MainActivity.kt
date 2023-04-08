@@ -16,9 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.kuuga.androidcompose.ui.theme.AndroidComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,6 +31,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     WelcomeText(text = "Dinosaurus")
                     Row()
+                    CreateColumn();
                     CreateTextField()
                     CreateButton()
                     DisplayImage()
@@ -100,7 +99,9 @@ fun Row()
 {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier.fillMaxWidth().padding(start = 5.dp, end = 5.dp)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 5.dp, end = 5.dp)
     ) {
         Text("Burger", modifier = Modifier.BgRed())
         Text("Logo", modifier = Modifier.BgRed())
