@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxWidth()
                 ) {
                     WelcomeText(text = "Dinosaurus")
+                    Row()
                     CreateTextField()
                     CreateButton()
                     DisplayImage()
@@ -93,3 +94,20 @@ fun CosCard()
         }
     }
 }
+
+@Composable
+fun Row()
+{
+    Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier.fillMaxWidth().padding(start = 5.dp, end = 5.dp)
+    ) {
+        Text("Burger", modifier = Modifier.BgRed())
+        Text("Logo", modifier = Modifier.BgRed())
+        Text("Wishlist", modifier = Modifier.BgRed())
+    }
+}
+
+@Composable
+fun Modifier.BgRed():Modifier = background(Color.Red)
+fun Modifier.BgBlue():Modifier = background(Color.Blue)
