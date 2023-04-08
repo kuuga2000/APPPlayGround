@@ -89,7 +89,7 @@ fun DisplayImage()
 @Composable
 fun CosCard()
 {
-    Card(elevation = 10.dp, modifier = Modifier.padding(all = 10.dp), backgroundColor = Color.Green) {
+    Card(elevation = 10.dp, modifier = Modifier.padding(all = 10.dp), backgroundColor = Color.Green, contentColor = Color.Red) {
         DisplayImage()
         Column(modifier = Modifier.padding(all = 10.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Text("Welcome")
