@@ -19,7 +19,9 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import com.kuuga.androidcompose.ui.theme.AndroidComposeTheme
@@ -100,9 +102,7 @@ fun CosCard() {
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Welcome")
-            Text("to")
-            Text("The Club")
+            Text(stringResource(R.string.hero_name), color = colorResource(R.color.purple_200))
         }
     }
 }
