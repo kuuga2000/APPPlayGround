@@ -7,11 +7,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -77,14 +79,14 @@ fun DisplayImage()
     Image(
         painter = painterResource(id = R.drawable.blacksun),
         contentDescription = "Kamen Rider Black Sun Reboot",
-        modifier = Modifier.padding(top = 50.dp)
+        modifier = Modifier.padding(top = 50.dp).clip(RoundedCornerShape(50.dp))
     )
 }
 
 @Composable
 fun CosCard()
 {
-    Card(elevation = 4.dp, modifier = Modifier.padding(all = 10.dp)) {
+    Card(elevation = 4.dp, modifier = Modifier.padding(all = 10.dp), backgroundColor = Color.Green) {
         Column(modifier = Modifier.padding(all = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Text("Welcome")
             Text("to")
