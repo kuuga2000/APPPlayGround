@@ -82,19 +82,19 @@ fun DisplayImage()
     Image(
         painter = painterResource(id = R.drawable.blacksun),
         contentDescription = "Kamen Rider Black Sun Reboot",
-        modifier = Modifier.padding(top = 50.dp).alpha(0.7f)
+        modifier = Modifier.alpha(0.7f).fillMaxWidth()
     )
 }
 
 @Composable
 fun CosCard()
 {
-    Card(elevation = 4.dp, modifier = Modifier.padding(all = 10.dp), backgroundColor = Color.Green) {
-        Column(modifier = Modifier.padding(all = 10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Card(elevation = 10.dp, modifier = Modifier.padding(all = 10.dp), backgroundColor = Color.Green) {
+        DisplayImage()
+        Column(modifier = Modifier.padding(all = 10.dp).fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Text("Welcome")
             Text("to")
             Text("The Club")
-            DisplayImage()
         }
     }
 }
