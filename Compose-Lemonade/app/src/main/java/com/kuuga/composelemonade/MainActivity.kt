@@ -55,7 +55,7 @@ fun ButtonImage() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(steps[lemon-1])
+            Text("${lemon} ${steps[lemon-1]}")
             Image(
                 painter = painterResource(imageResource),
                 contentDescription = "Lemon Tree",
