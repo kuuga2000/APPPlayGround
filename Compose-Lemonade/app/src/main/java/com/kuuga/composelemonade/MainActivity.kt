@@ -40,7 +40,8 @@ fun ButtonImage() {
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-        var lemon by remember { mutableStateOf(1) }
+        var lemon: Int by remember { mutableStateOf(1) }
+        var steps = arrayOf("Lemon Tree", "Lemon Squeeze", "Lemon Jus","Empy Cup")
         var imageResource = when (lemon) {
             1->R.drawable.lemon_tree
             2->R.drawable.lemon_squeeze
@@ -54,12 +55,16 @@ fun ButtonImage() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Text(lemon.toString())
+            Text(steps[lemon-1])
             Image(
                 painter = painterResource(imageResource),
                 contentDescription = "Lemon Tree",
                 modifier = Modifier.clickable {
-                    lemon = (1..4).random()
+                    if (lemon >= 4) {
+                        lemon = 1
+                    } else {
+                        lemon++
+                    }
                 }
             )
         }
