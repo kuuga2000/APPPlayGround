@@ -3,6 +3,7 @@ package com.kuuga.composetipcalculator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -12,6 +13,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
@@ -70,7 +72,8 @@ fun TipTimeScreen() {
             ),
             label = R.string.bill_amount,
             value = amountInput,
-            onValueChange = { amountInput = it }
+            onValueChange = { amountInput = it },
+            leadingIcon = R.drawable.money
         )
         EditNumberField(
             label = R.string.how_was_the_service,
@@ -79,7 +82,8 @@ fun TipTimeScreen() {
                 keyboardType = KeyboardType.Number,
                 imeAction = ImeAction.Done
             ),
-            onValueChange = { tipInput = it }
+            onValueChange = { tipInput = it },
+            leadingIcon = R.drawable.percent
         )
         RoundTheTipRow(roundUp = roundUp, onRoundUpChanged = {roundUp = it},
         modifier = Modifier.padding(bottom=32.dp))
@@ -96,6 +100,7 @@ fun TipTimeScreen() {
 @Composable
 fun EditNumberField(
     @StringRes label: Int,
+    @DrawableRes leadingIcon: Int,
     keyboardOptions: KeyboardOptions,
     value: String,
     onValueChange: (String) -> Unit
@@ -106,7 +111,8 @@ fun EditNumberField(
         label = { Text(stringResource(label)) },
         modifier = Modifier.fillMaxWidth(),
         singleLine = true,
-        keyboardOptions = keyboardOptions
+        keyboardOptions = keyboardOptions,
+        leadingIcon = {Icon(painter = painterResource(id = leadingIcon),null)}
     )
 }
 
