@@ -69,12 +69,12 @@ fun AffirmationCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(194.dp),
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Fit
             )
             Text(
                 text = LocalContext.current.getString(affirmation.stringResourceId),
                 modifier = Modifier.padding(16.dp),
-                style = MaterialTheme.typography.h2
+                style = MaterialTheme.typography.caption
             )
         }
     }
