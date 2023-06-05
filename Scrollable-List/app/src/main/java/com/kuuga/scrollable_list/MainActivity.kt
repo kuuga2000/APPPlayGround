@@ -41,3 +41,5 @@ fun DefaultPreview() {
         Greeting("Android")
     }
 }
+
+//https://github.com/google-developer-training/basic-android-kotlin-compose-training-affirmations/tree/starter
