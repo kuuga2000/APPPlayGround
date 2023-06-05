@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -29,7 +26,9 @@ class MainActivity : ComponentActivity() {
             ComposeArtSpaceTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState()),
                     color = MaterialTheme.colors.background
                 ) {
                     GalleryScreen()
@@ -65,25 +64,25 @@ fun GalleryScreen() {
         )
         Picture(src = imageList[indexNumber].image)
         Spacer(modifier = Modifier.height(10.dp))
-        Caption(text= "#" + indexNumber + ". "+ imageList[indexNumber].caption)
+        Caption(text= "#" + (indexNumber + 1) + ". "+ imageList[indexNumber].caption)
         Row(
             modifier = Modifier.fillMaxWidth(fraction = 0.9f),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             ButtonAction(
                 onClicked = {
-                    indexNumber++
-                    if (indexNumber>2) {
-                        indexNumber = 0
+                    indexNumber--
+                    if (indexNumber<0) {
+                        indexNumber = 2
                     }
                 },
                 text = "Previous"
             )
             ButtonAction(
                 onClicked = {
-                    indexNumber--
-                    if (indexNumber<0) {
-                        indexNumber = 2
+                    indexNumber++
+                    if (indexNumber>2) {
+                        indexNumber = 0
                     }
                 },
                 text = "Next"
