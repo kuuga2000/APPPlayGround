@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -64,15 +65,27 @@ fun GalleryScreen() {
         )
         Picture(src = imageList[indexNumber].image)
         Spacer(modifier = Modifier.height(10.dp))
-        Caption()
+        Caption(text= "#" + indexNumber + ". "+ imageList[indexNumber].caption)
         Row(
             modifier = Modifier.fillMaxWidth(fraction = 0.9f),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             ButtonAction(
+                onClicked = {
+                    indexNumber++
+                    if (indexNumber>2) {
+                        indexNumber = 0
+                    }
+                },
                 text = "Previous"
             )
             ButtonAction(
+                onClicked = {
+                    indexNumber--
+                    if (indexNumber<0) {
+                        indexNumber = 2
+                    }
+                },
                 text = "Next"
             )
         }
@@ -95,7 +108,7 @@ fun Picture(src: Int) {
 }
 
 @Composable
-fun Caption() {
+fun Caption(text: String) {
     Column(
         horizontalAlignment = Alignment.Start,
         modifier = Modifier
@@ -104,11 +117,11 @@ fun Caption() {
             .padding(vertical = 20.dp, horizontal = 10.dp)
 
     ) {
-        Text(text = "TEST")
-        Text(text = "TEST2")
+        Text(text = text)
     }
 }
 
+/*
 @Composable
 fun Buttons() {
     Row(
@@ -122,14 +135,13 @@ fun Buttons() {
             text = "Next"
         )
     }
-}
+}*/
 
 @Composable
-fun ButtonAction(text: String) {
-    val context = LocalContext.current
-    Button(onClick = {
-        Toast.makeText(context, "Test", Toast.LENGTH_SHORT).show()
-    }) {
+fun ButtonAction(text: String, onClicked: () -> Unit) {
+    Button(
+        onClick = onClicked
+    ) {
         Text(text = text)
     }
 }
