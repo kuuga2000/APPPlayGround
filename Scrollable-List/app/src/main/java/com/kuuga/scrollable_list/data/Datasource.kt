@@ -3,8 +3,8 @@ package com.kuuga.scrollable_list.data
 import com.kuuga.scrollable_list.R
 import com.kuuga.scrollable_list.model.Affirmation
 
-data class Datasource() {
-    fun loadAffirmation(): List<Affirmation> {
+class Datasource() {
+    fun loadAffirmations(): List<Affirmation> {
         return listOf<Affirmation>(
             Affirmation(R.string.kr_1, R.drawable.axel),
             Affirmation(R.string.kr_2, R.drawable.fang_joker),
