@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BeautifulAppsTheme(darkTheme = false) {
+            BeautifulAppsTheme(darkTheme = true) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -102,7 +103,7 @@ fun RiderTopAppBar(modifier: Modifier = Modifier) {
 @Composable
 fun RiderList(rider: Rider, modifier: Modifier=Modifier)
 {
-    Row(
+    Card(
         modifier= modifier
             .fillMaxWidth()
             .padding(dimensionResource(id = R.dimen.padding_small))
