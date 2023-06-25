@@ -17,7 +17,6 @@
 package com.example.dessertclicker
 
 import android.content.ActivityNotFoundException
-import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -49,7 +48,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -72,7 +70,7 @@ private const val TAG = "MainActivity"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate Called x")
+        Log.d(TAG, "onCreate Called")
         setContent {
             DessertClickerTheme {
                 // A surface container using the 'background' color from the theme
@@ -86,29 +84,34 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart Called")
+    }
+
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume Called x")
+        Log.d(TAG, "onResume Called")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d(TAG, "onRestart Called x")
+        Log.d(TAG, "onRestart Called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause Called x")
+        Log.d(TAG, "onPause Called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onStop Called x")
+        Log.d(TAG, "onStop Called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy Called x")
+        Log.d(TAG, "onDestroy Called")
     }
 }
 
@@ -166,7 +169,7 @@ private fun DessertClickerApp(
     desserts: List<Dessert>
 ) {
 
-    var revenue by rememberSaveable{ mutableStateOf(0) }
+    var revenue by rememberSaveable { mutableStateOf(0) }
     var dessertsSold by rememberSaveable { mutableStateOf(0) }
 
     val currentDessertIndex by rememberSaveable { mutableStateOf(0) }
