@@ -30,3 +30,15 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+/**
+ * Screen enum ->
+ * In this section, you create an enum class to hold constants for each of the following Lunch Tray app screens:
+ * - Start
+ * - Entree menu
+ * - Side dish menu
+ * - Accompaniment menu
+ * - Checkout
+ *
+ * Each screen should have an associated title in the form of a string. The strings are available in the starter code as resources.
+ */
