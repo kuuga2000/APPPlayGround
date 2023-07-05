@@ -48,6 +48,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.racetracker.R
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun RaceTrackerApp() {
@@ -66,8 +68,15 @@ fun RaceTrackerApp() {
 
     if(raceInProgress) {
         LaunchedEffect(playerOne, playerTwo) {
-            playerOne.run()
-            playerTwo.run()
+            /**
+             * To allow both participants to run concurrently,
+             * you need to launch two separate coroutines and move each call to the run() function inside those coroutines.
+             * Wrap the call to the playerOne.run() with launch builder.
+             */
+            coroutineScope {
+                launch { playerOne.run() }
+                launch { playerTwo.run() }
+            }
             raceInProgress = false
         }
     }

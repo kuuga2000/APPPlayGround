@@ -39,3 +39,20 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+/**
+ * Structured concurrency ->
+ *
+ * The way you write code using coroutines is called structured concurrency.
+ * This style of programming improves the readability and development time of your code.
+ * The idea of structured concurrency is that coroutines have a hierarchy—tasks might launch subtasks,
+ * which might launch subtasks in turn. The unit of this hierarchy is referred to as a coroutine scope.
+ * Coroutine scopes should always be associated with a lifecycle.
+ *
+ * The Coroutines APIs adhere to this structured concurrency by design.
+ * You cannot call a suspend function from a function which is not marked suspend.
+ * This limitation ensures that you call the suspend functions from coroutine builders,
+ * such as launch. These builders are, in turn, tied to a CoroutineScope.
+ *
+ * https://developer.android.com/static/codelabs/basic-android-kotlin-compose-coroutines-android-studio/img/8cb11ef243cb088_856.png
+ */
