@@ -72,3 +72,13 @@ fun ReplyAppExpandedPreview() {
         ReplyApp(windowSize = WindowWidthSizeClass.Expanded)
     }
 }
+
+/**
+ * Learn more ->
+ *
+ * https://developer.android.com/jetpack/compose/layouts/adaptive Build adaptive layouts
+ * https://developer.android.com/guide/topics/large-screens/support-different-screen-sizes Support different screen sizes
+ * https://m3.material.io/foundations/adaptive-design/large-screens/layout-anatomy Design for large screens
+ * https://medium.com/androiddevelopers/jetnews-for-every-screen-4d8e7927752 Jetnews for every screen
+ * https://developer.android.com/jetpack/compose/tooling#preview-multipreview Multipreview annotations
+ */
