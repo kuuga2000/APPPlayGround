@@ -45,4 +45,29 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-//https://developer.android.com/static/codelabs/basic-android-kotlin-compose-add-repository/img/f7f372187c75f57f_856.png
+/**
+ * Conclusion ->
+ *
+ * Congratulations on completing this codelab and
+ * refactoring the Mars Photos app to implement the repository pattern and dependency injection!
+ *
+ * The app's code is now following Android best practices for the data layer,
+ * which means it is more flexible, robust, and easily scalable.
+ *
+ * These changes also helped make the app more easily testable.
+ * This benefit is very important, as the code can continue to evolve while making sure it still behaves as expected.
+ *
+ * Don't forget to share your work on social media with #AndroidBasics!
+ *
+ *
+ * Learn more ->
+ *
+ * Android developer documentation:
+ * Dependency injection in Android https://developer.android.com/training/dependency-injection
+ * Guide to app architecture - Data layer https://developer.android.com/topic/architecture/data-layer
+ *
+ * Other:
+ * Coupling https://en.wikipedia.org/wiki/Coupling_(computer_programming)
+ *
+ * https://developer.android.com/static/codelabs/basic-android-kotlin-compose-add-repository/img/f7f372187c75f57f_856.png
+ */
