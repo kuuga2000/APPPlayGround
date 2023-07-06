@@ -45,4 +45,23 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// Learn More : https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-compose-unit-5-pathway-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-getting-data-internet#10
+/**
+ * Learn More : https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?continue=https%3A%2F%2Fdeveloper.android.com%2Fcourses%2Fpathways%2Fandroid-basics-compose-unit-5-pathway-1%23codelab-https%3A%2F%2Fdeveloper.android.com%2Fcodelabs%2Fbasic-android-kotlin-compose-getting-data-internet#10
+ *
+ * Learn more ->
+ *
+ * Android developer documentation:
+ * Guide to app architecture | Android Developers https://developer.android.com/topic/architecture
+ * ViewModel overview https://developer.android.com/topic/libraries/architecture/viewmodel
+ * ViewModelScope https://developer.android.com/topic/libraries/architecture/coroutines#viewmodelscope
+
+ * Kotlin documentation:
+ * Exceptions: try, catch, finally, throw, Nothing https://kotlinlang.org/docs/reference/exceptions.html
+ * Coroutines, official documentation https://kotlinlang.org/docs/reference/coroutines-overview.html
+ * Coroutine context and dispatchers https://kotlinlang.org/docs/reference/coroutines/coroutine-context-and-dispatchers.html
+ * Serialization | Kotlin https://kotlinlang.org/docs/serialization.html#0
+
+ * Other:
+ * Retrofit https://square.github.io/retrofit/
+ * Retrofit 2 Converter. Factory for Kotlin serialization https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter
+ */
