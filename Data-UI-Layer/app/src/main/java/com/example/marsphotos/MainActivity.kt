@@ -44,3 +44,5 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+//https://developer.android.com/static/codelabs/basic-android-kotlin-compose-add-repository/img/f7f372187c75f57f_856.png
