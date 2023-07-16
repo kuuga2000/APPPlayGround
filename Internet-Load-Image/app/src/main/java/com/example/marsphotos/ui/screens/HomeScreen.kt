@@ -49,12 +49,13 @@ import com.example.marsphotos.ui.theme.MarsPhotosTheme
 
 @Composable
 fun HomeScreen(
-    marsUiState: MarsUiState, modifier: Modifier = Modifier
+    marsUiState: MarsUiState, modifier: Modifier = Modifier, retryAction: () -> Unit,
 ) {
     when (marsUiState) {
         is MarsUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
         is MarsUiState.Success -> PhotosGridScreen(photos = marsUiState.photos, modifier = modifier)
-        else -> ErrorScreen(modifier = modifier.fillMaxSize())
+        is MarsUiState.Error -> ErrorScreen(modifier = modifier.fillMaxSize(), retryAction)
+        else -> ErrorScreen(modifier = modifier.fillMaxSize(), retryAction)
     }
 }
 
@@ -74,7 +75,7 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
  * The home screen displaying error message with re-attempt button.
  */
 @Composable
-fun ErrorScreen(modifier: Modifier = Modifier) {
+fun ErrorScreen(modifier: Modifier = Modifier, retryAction: () -> Unit) {
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center,
@@ -84,6 +85,9 @@ fun ErrorScreen(modifier: Modifier = Modifier) {
             painter = painterResource(id = R.drawable.ic_connection_error), contentDescription = ""
         )
         Text(text = stringResource(R.string.loading_failed), modifier = Modifier.padding(16.dp))
+        Button(onClick = retryAction) {
+            Text(stringResource(id = R.string.retry))
+        }
     }
 }
 
@@ -112,7 +116,7 @@ fun LoadingScreenPreview() {
 @Composable
 fun ErrorScreenPreview() {
     MarsPhotosTheme {
-        ErrorScreen()
+        ErrorScreen(retryAction = {})
     }
 }
 
