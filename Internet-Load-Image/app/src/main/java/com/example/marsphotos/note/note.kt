@@ -22,3 +22,18 @@ package com.example.marsphotos.note
  *
  * link : Coil => https://coil-kt.github.io/coil/
  */
+
+
+/**
+ * Learn more ->
+ *
+ * Android developer documentation->
+ *
+ * Lists and grids | Jetpack Compose | Android Developers https://developer.android.com/jetpack/compose/lists
+ * Lazy grids | Jetpack Compose | Android Developers https://developer.android.com/jetpack/compose/lists#lazy-grids
+ * ViewModel Overview https://developer.android.com/topic/libraries/architecture/viewmodel
+ *
+ * Other ->
+ *
+ * Coil https://coil-kt.github.io/coil/
+ */
